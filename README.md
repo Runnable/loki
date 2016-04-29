@@ -40,6 +40,7 @@ Runnable Docker/Swarm client library with batteries.
   - topContainer
   - startContainer
   - commitContainer
+  - inspectContainer
   - stopContainer
   - pauseContainer
   - unpauseContainer
