@@ -21,7 +21,7 @@ Runnable Docker/Swarm client library with batteries.
 
 ## Usage
 
-```
+```javascript
   const Docker  = require('loki').Docker
 
   const dockerClient = new Docker({ host: 'https://127.0.0.1:4242'})
