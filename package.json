@@ -1,5 +1,5 @@
 {
-  "name": "docker-girl",
+  "name": "loki",
   "version": "0.1.0",
   "description": "Runnable standard Docker/Swarm library with batteries",
   "main": "index.js",
