@@ -1,2 +1,2 @@
-module.expors.Docker = require('./lib/docker')
-module.expors.Swarm = require('./lib/swarm')
+module.exports.Docker = require('./lib/docker')
+module.exports.Swarm = require('./lib/swarm')
