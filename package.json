@@ -9,10 +9,12 @@
     "doc": "jsdoc index.js -d doc/; open -a 'Google Chrome' doc/index.html",
     "lint": "standard --verbose",
     "check-coverage": "istanbul check-coverage && echo 'Coverage check successful!'",
-    "coverage": "NODE_ENV=test NODE_PATH=./lib istanbul cover ./node_modules/mocha/bin/_mocha -- $npm_package_options_mocha test/ && npm run check-coverage",
-    "start": "NODE_PATH=./lib node index.js",
+    "coverage": "DOCKER_CERT_PATH=./test/fixtures/certs NODE_ENV=test NODE_PATH=./lib istanbul cover ./node_modules/mocha/bin/_mocha -- $npm_package_options_mocha test/ && npm run check-coverage",
     "unit": "DOCKER_CERT_PATH=./test/fixtures/certs NODE_ENV=test NODE_PATH=./lib mocha $npm_package_options_mocha test",
     "test": "npm run lint && npm run coverage"
+  },
+  "directories": {
+    "test": "test"
   },
   "author": "Anton Podviaznikov <anton@runnable.com> (http://www.runnable.com)",
   "license": "MIT",
