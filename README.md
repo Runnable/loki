@@ -17,6 +17,7 @@ Runnable Docker/Swarm client library with batteries.
    * automatically report each docker call to datadog using [dogerode](https://github.com/Runnable/dogerode)
    * HTTPS certs are required. Will throw an error
    * Base client includes Promisified container actions like `stopContainer`, `logContainer` etc
+   * You can still call Dockerode directly. Dockerode instance is available under `client` property
 
 
 ## Usage
