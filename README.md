@@ -1,6 +1,7 @@
 # loki
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![Build Status](https://travis-ci.org/Runnable/loki.svg?branch=master)](https://travis-ci.org/Runnable/loki)
 [![Code Climate](https://codeclimate.com/github/Runnable/loki/badges/gpa.svg)](https://codeclimate.com/github/Runnable/loki)
 
 
