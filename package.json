@@ -37,6 +37,7 @@
     "bunyan": "^1.8.1",
     "dockerode": "^2.2.10",
     "dogerode": "0.0.3",
+    "in-publish": "^2.0.0",
     "joi": "^8.0.5",
     "swarmerode": "^2.1.0"
   },
