@@ -59,39 +59,76 @@ You can extend loki Docker client with your app specific functions:
   const Docker  = require('loki').Docker
 
   class MyDocker extends Docker {
-    
-    
+
+
   }
 ```
 
 
 ## Base functions
 
-  - topContainer
-  - startContainer
-  - commitContainer
-  - inspectContainer
-  - stopContainer
-  - pauseContainer
-  - unpauseContainer
-  - restartContainer
-  - resizeContainer
-  - attachContainer
-  - removeContainer
-  - copyContainer
-  - killContainer
-  - execContainer
-  - renameContainer
-  - logContainer
-  - statsContainer
-  - getArchiveContainer
-  - infoArchiveContainer
-  - putArchiveContainer
-  - updateContainer
+Every Loki client include utility Promise-based functions
+to deal with containers.
+
+E.x. instead of this code
+
+```javascript
+  const Docker  = require('loki').Docker
+
+  const dockerClient = new Docker({ host: 'https://127.0.0.1:4242'})
+  dockerClient.getContainer('71501a8ab0f8')
+    .stop(function (err) {
+      console.log('stopped container?', err)
+    })
+
+```
+
+You can do following
+
+```javascript
+  const Docker  = require('loki').Docker
+
+  const dockerClient = new Docker({ host: 'https://127.0.0.1:4242'})
+  dockerClient.stopContainerAsync('71501a8ab0f8')
+    .then(function () {
+      console.log('container was stopped')
+    })
+
+```
+
+  - topContainerAsync
+  - startContainerAsync
+  - commitContainerAsync
+  - inspectContainerAsync
+  - stopContainerAsync
+  - pauseContainerAsync
+  - unpauseContainerAsync
+  - restartContainerAsync
+  - resizeContainerAsync
+  - attachContainerAsync
+  - removeContainerAsync
+  - copyContainerAsync
+  - killContainerAsync
+  - execContainerAsync
+  - renameContainerAsync
+  - logContainerAsync
+  - statsContainerAsync
+  - getArchiveContainerAsync
+  - infoArchiveContainerAsync
+  - putArchiveContainerAsync
+  - updateContainerAsync
 
 
-## Swarm function
+## Swarm functions
 
   - swarmHosts
   - swarmInfo
   - swarmHostExists
+
+
+## Conventions
+
+ * Each client instance has all functions from Dockerode client available to directly.
+ * Each client instance has Promisified Dockerode functions available with `Async` suffix.
+ * Each Swarm client instance has all functions from Swarmerode client available to directly.
+ * Each Swarm client instance has Promisified Swarmerode functions available with `Async` suffix.
