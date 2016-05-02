@@ -22,13 +22,13 @@ Runnable Docker/Swarm client library with batteries.
 
 ## Usage
 
-You can use loki Docker client promisified implementation like this:
+You can use loki Docker client Promisified extra container functions like this:
 
 ```javascript
   const Docker  = require('loki').Docker
 
   const dockerClient = new Docker({ host: 'https://127.0.0.1:4242'})
-  dockerClient.stopContainer('71501a8ab0f8')
+  dockerClient.stopContainerAsync('71501a8ab0f8')
     .then(function () {
       console.log('container stopped')
     })
@@ -38,17 +38,29 @@ You can use loki Docker client promisified implementation like this:
 
 ```
 
-You can use loki Dockerode client directly like this:
+You can use loki Dockerode client methods like this:
 
 ```javascript
   const Docker  = require('loki').Docker
 
   const dockerClient = new Docker({ host: 'https://127.0.0.1:4242'})
-  dockerClient.client.getContainer('71501a8ab0f8')
+  dockerClient.getContainer('71501a8ab0f8')
     .stop(function (err) {
       if (err) {
         return console.log('container failed to stop', err)
       }
+      console.log('container stopped')
+    })
+```
+
+You can use loki Dockerode promisified methods directly like this:
+
+```javascript
+  const Docker  = require('loki').Docker
+
+  const dockerClient = new Docker({ host: 'https://127.0.0.1:4242'})
+  dockerClient.getContainer('71501a8ab0f8').stopAsync()
+    .then(function () {
       console.log('container stopped')
     })
 ```
@@ -62,6 +74,15 @@ You can extend loki Docker client with your app specific functions:
 
 
   }
+
+  const myDocker = new MyDocker()
+  dockerClient.stopContainerAsync('71501a8ab0f8')
+    .then(function () {
+      console.log('container stopped')
+    })
+    .catch(function (err) {
+      console.log('container failed to stop', err)
+    })
 ```
 
 
