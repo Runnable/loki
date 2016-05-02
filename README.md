@@ -17,9 +17,12 @@ Runnable Docker/Swarm client library with batteries.
    * automatically report each docker call to datadog using [dogerode](https://github.com/Runnable/dogerode)
    * HTTPS certs are required. Will throw an error
    * Base client includes Promisified container actions like `stopContainer`, `logContainer` etc
+   * You can still call Dockerode directly. Dockerode instance is available under `client` property
 
 
 ## Usage
+
+You can use loki Docker client promisified implementation like this:
 
 ```javascript
   const Docker  = require('loki').Docker
@@ -34,6 +37,33 @@ Runnable Docker/Swarm client library with batteries.
     })
 
 ```
+
+You can use loki Dockerode client directly like this:
+
+```javascript
+  const Docker  = require('loki').Docker
+
+  const dockerClient = new Docker({ host: 'https://127.0.0.1:4242'})
+  dockerClient.client.getContainer('71501a8ab0f8')
+    .stop(function (err) {
+      if (err) {
+        return console.log('container failed to stop', err)
+      }
+      console.log('container stopped')
+    })
+```
+
+You can extend loki Docker client with your app specific functions:
+
+```javascript
+  const Docker  = require('loki').Docker
+
+  class MyDocker extends Docker {
+    
+    
+  }
+```
+
 
 ## Base functions
 
