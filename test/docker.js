@@ -4,6 +4,8 @@ const chai = require('chai')
 chai.use(require('chai-as-promised'))
 const assert = chai.assert
 const Dockerode = require('dockerode')
+const Swarmerode = require('swarmerode')
+const BaseClient = require('../index')._BaseClient
 const Docker = require('../index').Docker
 
 describe('Docker', function () {
@@ -54,5 +56,29 @@ describe('Docker', function () {
       done()
     })
     /*eslint-disable no-new */
+  })
+  describe('inherited functions', function () {
+
+    it('should have all dockerode functions available', function (done) {
+      Object.keys(Swarmerode.prototype).forEach(function (func) {
+        assert.include(Object.keys(Docker.prototype), func)
+      })
+      done()
+    })
+
+    it('should have all utility functions', function (done) {
+      const utilityFunctions = BaseClient._containerActions.map(function (action) {
+        return action + 'ContainerAsync'
+      })
+      const docker = new Docker({
+        host: 'https://10.0.0.1:4242',
+        serviceName: 'loki',
+        timeout: 2000
+      })
+      utilityFunctions.forEach(function (func) {
+        assert.isDefined(docker[func])
+      })
+      done()
+    })
   })
 })
