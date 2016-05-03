@@ -59,7 +59,6 @@ describe('Swarm', function () {
   })
 
   describe('inherited functions', function () {
-
     it('should have all dockerode functions available', function (done) {
       Object.keys(Dockerode.prototype).forEach(function (func) {
         assert.include(Object.keys(Swarm.prototype), func)

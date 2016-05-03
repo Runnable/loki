@@ -57,8 +57,8 @@ describe('Docker', function () {
     })
     /*eslint-disable no-new */
   })
-  describe('inherited functions', function () {
 
+  describe('inherited functions', function () {
     it('should have all dockerode functions available', function (done) {
       Object.keys(Swarmerode.prototype).forEach(function (func) {
         assert.include(Object.keys(Docker.prototype), func)
