@@ -8,8 +8,8 @@ const sinon = require('sinon')
 require('sinon-as-promised')(Promise)
 const Dockerode = require('dockerode')
 const SwarmerodeClass = require('swarmerode')._Swarmerode
-const BaseClient = require('../index')._BaseClient
-const Swarm = require('../index').Swarm
+const BaseClient = require('../lib/index')._BaseClient
+const Swarm = require('../lib/index').Swarm
 
 describe('Swarm', function () {
   describe('constructor', () => {

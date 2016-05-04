@@ -3,7 +3,7 @@
 const chai = require('chai')
 chai.use(require('chai-as-promised'))
 const assert = chai.assert
-const BaseClient = require('../index')._BaseClient
+const BaseClient = require('../lib/index')._BaseClient
 
 describe('Base Client', function () {
   describe('constructor', () => {
