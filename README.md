@@ -3,6 +3,10 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![Build Status](https://travis-ci.org/Runnable/loki.svg?branch=master)](https://travis-ci.org/Runnable/loki)
 [![Code Climate](https://codeclimate.com/github/Runnable/loki/badges/gpa.svg)](https://codeclimate.com/github/Runnable/loki)
+[![Dependency Status](https://david-dm.org/Runnable/loki.svg)](https://david-dm.org/Runnable/loki)
+[![devDependency Status](https://david-dm.org/Runnable/loki/dev-status.svg)](https://david-dm.org/Runnable/loki/dev-status.svg)
+
+[![NPM](https://nodei.co/npm/@runnable/loki.png?compact=true)](https://nodei.co/npm/@runnable/loki)
 
 
 Runnable Docker/Swarm client library with batteries.
