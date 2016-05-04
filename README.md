@@ -6,7 +6,7 @@
 [![Dependency Status](https://david-dm.org/Runnable/loki.svg)](https://david-dm.org/Runnable/loki)
 [![devDependency Status](https://david-dm.org/Runnable/loki/dev-status.svg)](https://david-dm.org/Runnable/loki/dev-status.svg)
 
-[![NPM](https://nodei.co/npm/@runnable/loki.png?compact=true)](https://nodei.co/npm/@runnable/loki)
+[![NPM](https://nodei.co/npm/@runnable/loki.svg?compact=true)](https://nodei.co/npm/@runnable/loki)
 
 
 Runnable Docker/Swarm client library with batteries.
