@@ -7,7 +7,6 @@ const assert = chai.assert
 const sinon = require('sinon')
 require('sinon-as-promised')(Promise)
 const Dockerode = require('dockerode')
-const Swarmerode = require('swarmerode')
 const SwarmerodeClass = require('swarmerode')._Swarmerode
 const BaseClient = require('../index')._BaseClient
 const Swarm = require('../index').Swarm
