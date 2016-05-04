@@ -1,8 +1,11 @@
 'use strict'
 
+const Promise = require('bluebird')
 const chai = require('chai')
 chai.use(require('chai-as-promised'))
 const assert = chai.assert
+const sinon = require('sinon')
+require('sinon-as-promised')(Promise)
 const Dockerode = require('dockerode')
 const Swarmerode = require('swarmerode')
 const BaseClient = require('../index')._BaseClient
@@ -63,6 +66,8 @@ describe('Docker', function () {
       Object.keys(Swarmerode.prototype).forEach(function (func) {
         assert.include(Object.keys(Docker.prototype), func)
       })
+      assert.equal(Object.keys(Dockerode.prototype).length, 27)
+      assert.equal(Object.keys(Docker.prototype).length, 48)
       done()
     })
 
@@ -75,10 +80,50 @@ describe('Docker', function () {
         serviceName: 'loki',
         timeout: 2000
       })
+      assert.equal(utilityFunctions.length, 21)
       utilityFunctions.forEach(function (func) {
         assert.isDefined(docker[func])
       })
       done()
+    })
+  })
+
+  describe('inherited promisified functions', function () {
+    let dockerodeFuncs = Object.keys(Dockerode.prototype)
+    beforeEach(function (done) {
+      dockerodeFuncs.forEach(function (func) {
+        sinon.stub(Dockerode.prototype, func).yieldsAsync(null, {})
+      })
+      done()
+    })
+
+    afterEach(function (done) {
+      dockerodeFuncs.forEach(function (func) {
+        Dockerode.prototype[func].restore()
+      })
+      done()
+    })
+
+    it('should be still promisified', function (done) {
+      const docker = new Docker({
+        host: 'https://10.0.0.1:4242',
+        serviceName: 'loki',
+        timeout: 2000
+      })
+      docker.pingAsync().asCallback(done)
+    })
+
+    it('should have promise for each original Dockerode function', function (done) {
+      const docker = new Docker({
+        host: 'https://10.0.0.1:4242',
+        serviceName: 'loki',
+        timeout: 2000
+      })
+      const promises = dockerodeFuncs.map(function (func) {
+        return docker[func + BaseClient.PROMISIFIED_SUFFIX]
+      })
+      assert.equal(promises.length, 27)
+      Promise.all(promises).asCallback(done)
     })
   })
 })
