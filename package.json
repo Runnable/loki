@@ -1,8 +1,9 @@
 {
-  "name": "loki",
+  "name": "@Runnable/loki",
   "version": "0.1.0",
   "description": "Runnable Docker/Swarm library with batteries",
   "main": "index.js",
+  "private": false,
   "scripts": {
     "build": "babel --out-dir . lib",
     "prepublish": "not-in-install && npm run build || in-install",
@@ -16,6 +17,13 @@
   "directories": {
     "test": "test"
   },
+  "keywords": [
+    "dockerode",
+    "swarmerode",
+    "docker",
+    "datadog",
+    "runnable"
+  ],
   "author": "Anton Podviaznikov <anton@runnable.com> (http://www.runnable.com)",
   "license": "MIT",
   "options": {
