@@ -86,6 +86,42 @@ describe('Docker', function () {
       })
       done()
     })
+    describe('promises', function () {
+      let container = {
+        kill: function (opts, cb) {
+          return cb()
+        }
+      }
+      beforeEach(function (done) {
+        sinon.stub(Dockerode.prototype, 'getContainer').returns(container)
+        sinon.spy(container, 'kill')
+        done()
+      })
+
+      afterEach(function (done) {
+        Dockerode.prototype.getContainer.restore()
+        container.kill.restore()
+        done()
+      })
+
+      it('should make utility functions as promises', function (done) {
+        const docker = new Docker({
+          host: 'https://10.0.0.1:4242',
+          serviceName: 'loki',
+          timeout: 2000
+        })
+        docker.killContainerAsync(1, {}).asCallback(done)
+      })
+
+      it('should options should be optional', function (done) {
+        const docker = new Docker({
+          host: 'https://10.0.0.1:4242',
+          serviceName: 'loki',
+          timeout: 2000
+        })
+        docker.killContainerAsync(1).asCallback(done)
+      })
+    })
   })
 
   describe('inherited promisified functions', function () {
