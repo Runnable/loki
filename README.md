@@ -64,9 +64,9 @@ You can use loki Dockerode promisified methods directly like this:
   const Docker  = require('loki').Docker
 
   const dockerClient = new Docker({ host: 'https://127.0.0.1:4242'})
-  dockerClient.getContainer('71501a8ab0f8').stopAsync()
-    .then(function () {
-      console.log('container stopped')
+  dockerClient.listConatinersAsync('71501a8ab0f8')
+    .then(function (containers) {
+      console.log('found containers')
     })
 ```
 
