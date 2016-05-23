@@ -30,7 +30,7 @@ Runnable Docker/Swarm client library with batteries.
 You can use loki Docker client Promisified extra container functions like this:
 
 ```javascript
-  const Docker  = require('loki').Docker
+  const Docker = require('loki').Docker
 
   const dockerClient = new Docker({ host: 'https://127.0.0.1:4242'})
   dockerClient.stopContainerAsync('71501a8ab0f8')
@@ -46,7 +46,7 @@ You can use loki Docker client Promisified extra container functions like this:
 You can use loki Dockerode client methods like this:
 
 ```javascript
-  const Docker  = require('loki').Docker
+  const Docker = require('loki').Docker
 
   const dockerClient = new Docker({ host: 'https://127.0.0.1:4242'})
   dockerClient.getContainer('71501a8ab0f8')
@@ -61,7 +61,7 @@ You can use loki Dockerode client methods like this:
 You can use loki Dockerode promisified methods directly like this:
 
 ```javascript
-  const Docker  = require('loki').Docker
+  const Docker = require('loki').Docker
 
   const dockerClient = new Docker({ host: 'https://127.0.0.1:4242'})
   dockerClient.listConatinersAsync('71501a8ab0f8')
@@ -73,7 +73,7 @@ You can use loki Dockerode promisified methods directly like this:
 You can extend loki Docker client with your app specific functions:
 
 ```javascript
-  const Docker  = require('loki').Docker
+  const Docker = require('loki').Docker
 
   class MyDocker extends Docker {
 
@@ -99,7 +99,7 @@ to deal with containers.
 E.x. instead of this code
 
 ```javascript
-  const Docker  = require('loki').Docker
+  const Docker = require('loki').Docker
 
   const dockerClient = new Docker({ host: 'https://127.0.0.1:4242'})
   dockerClient.getContainer('71501a8ab0f8')
@@ -109,10 +109,10 @@ E.x. instead of this code
 
 ```
 
-You can do following
+You can do the following
 
 ```javascript
-  const Docker  = require('loki').Docker
+  const Docker = require('loki').Docker
 
   const dockerClient = new Docker({ host: 'https://127.0.0.1:4242'})
   dockerClient.stopContainerAsync('71501a8ab0f8')
