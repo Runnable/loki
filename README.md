@@ -147,9 +147,9 @@ You can do the following
 
 ## Swarm functions
 
-  - swarmHosts
-  - swarmInfo
-  - swarmHostExists
+  - swarmHostsAsync
+  - swarmInfoAsync
+  - swarmHostExistsAsync
 
 
 ## Conventions
