@@ -42,10 +42,10 @@ describe('Docker', function () {
       done()
     })
 
-    it('should throw if timeout is not defined', (done) => {
+    it('should throw if timeout is not a number', (done) => {
       assert.throws(() => {
-        new Docker({ host: 'https://10.0.0.1:4242', serviceName: 'loki' })
-      }, Error, '"timeout" is required')
+        new Docker({ host: 'https://10.0.0.1:4242', serviceName: 'loki', timeout: 'abc' })
+      }, Error, '"timeout" must be a number')
       done()
     })
 
@@ -80,7 +80,7 @@ describe('Docker', function () {
         serviceName: 'loki',
         timeout: 2000
       })
-      assert.equal(utilityFunctions.length, 21)
+      assert.equal(utilityFunctions.length, 20)
       utilityFunctions.forEach(function (func) {
         assert.isDefined(docker[func])
       })

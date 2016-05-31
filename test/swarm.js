@@ -42,10 +42,10 @@ describe('Swarm', function () {
       done()
     })
 
-    it('should throw if timeout is not defined', (done) => {
+    it('should throw if timeout is not a number', (done) => {
       assert.throws(() => {
-        new Swarm({ host: 'https://10.0.0.1:4242', serviceName: 'loki' })
-      }, Error, '"timeout" is required')
+        new Swarm({ host: 'https://10.0.0.1:4242', serviceName: 'loki', timeout: 'abc' })
+      }, Error, '"timeout" must be a number')
       done()
     })
 
@@ -89,7 +89,7 @@ describe('Swarm', function () {
         serviceName: 'loki',
         timeout: 2000
       })
-      assert.equal(utilityFunctions.length, 21)
+      assert.equal(utilityFunctions.length, 20)
       utilityFunctions.forEach(function (func) {
         assert.isDefined(swarm[func])
       })
