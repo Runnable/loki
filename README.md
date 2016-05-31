@@ -133,11 +133,10 @@ You can do the following
   - resizeContainerAsync
   - attachContainerAsync
   - removeContainerAsync
-  - copyContainerAsync
   - killContainerAsync
   - execContainerAsync
   - renameContainerAsync
-  - logContainerAsync
+  - logsContainerAsync
   - statsContainerAsync
   - getArchiveContainerAsync
   - infoArchiveContainerAsync
@@ -154,7 +153,7 @@ You can do the following
 
 ## Conventions
 
- * Each client instance has all functions from Dockerode client available to directly.
+ * Each client instance has all functions from Dockerode client available to call directly.
  * Each client instance has Promisified Dockerode functions available with `Async` suffix.
- * Each Swarm client instance has all functions from Swarmerode client available to directly.
+ * Each Swarm client instance has all functions from Swarmerode client available to call directly.
  * Each Swarm client instance has Promisified Swarmerode functions available with `Async` suffix.
