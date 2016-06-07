@@ -17,7 +17,7 @@ describe('Swarm', function () {
     it('should throw if options are empty', (done) => {
       assert.throws(() => {
         new Swarm()
-      }, Error, '"docker opts" is required')
+      }, Error, '"host" is required')
       done()
     })
 

@@ -17,7 +17,7 @@ describe('Docker', function () {
     it('should throw if options are empty', (done) => {
       assert.throws(() => {
         new Docker()
-      }, Error, '"docker opts" is required')
+      }, Error, '"host" is required')
       done()
     })
 
