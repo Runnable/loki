@@ -47,7 +47,7 @@
     "dogerode": "0.1.3",
     "in-publish": "^2.0.0",
     "joi": "^8.0.5",
-    "swarmerode": "git+ssh://git@github.com/Runnable/swarmerode.git#ignore-bad-nodes"
+    "swarmerode": "2.2.3-0"
   },
   "devDependencies": {
     "babel-cli": "^6.7.7",
