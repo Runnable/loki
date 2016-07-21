@@ -1,6 +1,6 @@
 {
   "name": "@runnable/loki",
-  "version": "2.0.0",
+  "version": "3.0.0-0",
   "description": "Runnable Docker/Swarm library with batteries",
   "main": "index.js",
   "private": false,
