@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/Runnable/loki.svg?branch=master)](https://travis-ci.org/Runnable/loki)
 [![Code Climate](https://codeclimate.com/github/Runnable/loki/badges/gpa.svg)](https://codeclimate.com/github/Runnable/loki)
 [![Dependency Status](https://david-dm.org/Runnable/loki.svg)](https://david-dm.org/Runnable/loki)
-[![devDependency Status](https://david-dm.org/Runnable/loki/dev-status.svg)](https://david-dm.org/Runnable/loki/dev-status.svg)
+[![devDependency Status](https://david-dm.org/Runnable/loki/dev-status.svg)](https://david-dm.org/Runnable/loki)
 
 [![NPM](https://nodei.co/npm/@runnable/loki.svg?compact=true)](https://nodei.co/npm/@runnable/loki)
 
