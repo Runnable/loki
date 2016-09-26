@@ -13,7 +13,7 @@ const Swarm = require('../lib/index').Swarm
 
 describe('Swarm', function () {
   describe('constructor', () => {
-    /*eslint-disable no-new */
+    /* eslint-disable no-new */
     it('should throw if options are empty', (done) => {
       assert.throws(() => {
         new Swarm()
@@ -52,13 +52,16 @@ describe('Swarm', function () {
     it('should setup docker', (done) => {
       let swarm
       assert.doesNotThrow(() => {
-        swarm = new Swarm({ host: 'https://10.0.0.1:4242',
-        serviceName: 'loki', timeout: 2000 })
+        swarm = new Swarm({
+          host: 'https://10.0.0.1:4242',
+          serviceName: 'loki',
+          timeout: 2000
+        })
       })
       assert.instanceOf(swarm.client, Dockerode)
       done()
     })
-    /*eslint-disable no-new */
+    /* eslint-disable no-new */
   })
 
   describe('inherited functions', function () {
