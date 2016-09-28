@@ -13,7 +13,7 @@ const Docker = require('../lib/index').Docker
 
 describe('Docker', function () {
   describe('constructor', () => {
-    /*eslint-disable no-new */
+    /* eslint-disable no-new */
     it('should throw if options are empty', (done) => {
       assert.throws(() => {
         new Docker()
@@ -52,13 +52,16 @@ describe('Docker', function () {
     it('should setup docker', (done) => {
       let docker
       assert.doesNotThrow(() => {
-        docker = new Docker({ host: 'https://10.0.0.1:4242',
-        serviceName: 'loki', timeout: 2000 })
+        docker = new Docker({
+          host: 'https://10.0.0.1:4242',
+          serviceName: 'loki',
+          timeout: 2000
+        })
       })
       assert.instanceOf(docker.client, Dockerode)
       done()
     })
-    /*eslint-disable no-new */
+    /* eslint-disable no-new */
   })
 
   describe('inherited functions', function () {
