@@ -1,7 +1,5 @@
 'use strict'
 
-require('loadenv')()
-
 const chai = require('chai')
 const assert = chai.assert
 
