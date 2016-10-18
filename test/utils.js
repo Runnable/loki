@@ -29,4 +29,21 @@ describe('utils unit test', () => {
       done()
     })
   })
+
+  describe('toDockerIp', () => {
+    it('should convert host to ip', (done) => {
+      assert.equal(utils.toDockerIp('10.0.0.1:4242'), '10.0.0.1')
+      done()
+    })
+
+    it('should convert url to ip', (done) => {
+      assert.equal(utils.toDockerIp('http://10.0.0.1:4242'), '10.0.0.1')
+      done()
+    })
+
+    it('should return same valid ip', (done) => {
+      assert.equal(utils.toDockerIp('10.0.0.1'), '10.0.0.1')
+      done()
+    })
+  })
 })
