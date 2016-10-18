@@ -3,7 +3,7 @@
 const chai = require('chai')
 const assert = chai.assert
 
-const utils = require('../../lib/utils')
+const utils = require('../lib/index').Utils
 
 describe('utils unit test', () => {
   describe('toDockerHost', () => {
