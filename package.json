@@ -46,7 +46,7 @@
     "dockerode": "2.2.10",
     "dogerode": "0.2.0",
     "in-publish": "^2.0.0",
-    "joi": "^9.0.4",
+    "joi": "^10.0.0",
     "swarmerode": "^3.1.0"
   },
   "devDependencies": {
