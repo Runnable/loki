@@ -43,7 +43,7 @@
     "101": "^1.5.0",
     "bluebird": "^3.3.5",
     "bunyan": "^1.8.1",
-    "dockerode": "2.2.10",
+    "dockerode": "2.4.1",
     "dogerode": "0.2.0",
     "in-publish": "^2.0.0",
     "joi": "^9.0.4",
